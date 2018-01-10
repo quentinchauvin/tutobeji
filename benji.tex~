@@ -1,0 +1,140 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[francais]{babel}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{pgf,tikz,color}
+\usetikzlibrary{arrows}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\title{Mon premier article}
+\author{par Quentin pour Benji}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\begin{abstract}
+Ceci est un résumé de ce que l'on va ap\'prendre !!!
+\end{abstract}
+\newpage
+\section{Introduction}
+\subsection{Pour commencer}
+Benji est trop bien !!!!
+\subsection{Pour suivre}
+\subsubsection{Coucou}
+Soit une lame mince transparentes d'indice $n$ à face parralèle d'épaisseur $e$ plongée dans un milieu d'indice $n_0$. Soit une onde plane dont on considère que l'amplitude vaut $1$, se popageant dasn le milieu d'indice $n_0$ avec une incide proche de la normal au dioptrede la lame mince. Cette onde créée une infinité d'onde réfléchie et transmise par la lame mince. Les coeficients de reflexion et de transmission $(r,t)$ pour une incidence proche de la normal sont : 
+\section{Mathématiques}
+\subsection{\'Equations}
+
+En utilsant les dollard on tape des maths dans un paragraphe : $\sqrt{2}$ Ainsi que $\frac{1}{(\pi + 2)^3 -1}$\footnote{Nous prendrons soins de remarquer que ceci est un commentaire, de plus nous remarquerons que la fraction est "petite"}.
+
+Pour de grande équations important on préferera ceci :
+\[
+\epsilon = \frac{\sqrt{\cos i}}{42^2}
+\]
+
+\[
+\rho = \sum^{+ \infty}_{n} a_0 e^{n-1}\footnote{Avec cette façon de faire les fractions sont "grande", tout du moins de taille normale.}
+\]
+\subsection{Equations badasses !}
+\[ \int_{a}^{b} f(x) \, \mathrm{d}x \]
+
+Enfin voici une dernière façon de faire , $\displaystyle \frac{42}{\int_b^a z \mathrm{d}z }$ \footnote{Ou l'emplois de /displaystyle nous fais des taille d'équation normale, même au seins d'un texte} qui est sympathique.
+
+\section{Insertions d'élements externes}
+
+\subsection{Image}
+\subsubsection{Insertion simple}
+\begin{center}
+\includegraphics{poulpy.png}
+\end{center}
+C'est le moyen le plus simple d'insérer une image\footnote{Remarque, nous l'avons centrer}.
+\subsubsection{Insertion plus "Graphique"}
+\begin{wrapfigure}[8]{r}{4cm}
+\includegraphics[width=4cm]{poulpy.png}
+\end{wrapfigure}
+Lorsque la lame mince est éclairé en incidence proche de la normale au dioptre, formant un angle $\alpha$ très faible en tre eux. Le point de rencontre des rayons issus de la reflexion ou de la transmission par la lame en coin est plus ou moins proche de celle-ci. on dit que les interférences sont \underline{localisées à l'infini}. Lorsque la lame mince est éclairé en incidence proche de la normale au dioptre, formant un angle $\alpha$ très faible en tre eux. Le point de rencontre des rayons issus de la reflexion ou de la transmission par la lame en coin est plus ou moins proche de celle-ci. on dit que les interférences sont \underline{localisées à l'infini}. Lorsque la lame mince est éclairé en incidence proche de la normale au dioptre, formant un angle $\alpha$ très faible en tre eux. Le point de rencontre des rayons issus de la reflexion ou de la transmission par la lame en coin est plus ou moins proche de celle-ci. on dit que les interférences sont \underline{localisées à l'infini}.
+\subsection{Graphique}
+Nous utiliserons geogebra pour generer le code de nos graphique :
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=0.7853981633974483cm,ystep=1.0cm] (-0.79,-1.2) grid (7,1.4);
+\draw[->,color=black] (-0.79,0) -- (7,0);
+\foreach \x in {,1.57,3.14,4.71,6.28}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-1.2) -- (0,1.4);
+\foreach \y in {-1,1}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-0.79,-1.2) rectangle (7,1.4);
+\draw[smooth,samples=100,domain=-0.79:7.0] plot(\x,{sin((4*(\x))*180/pi)});
+\end{tikzpicture}
+
+$g(x) = \sin(4x)$
+\end{center}
+Ou alors ceci : 
+\begin{center}
+  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 2pt off 2pt, xstep=0.7853981633974483cm,ystep=1.0cm] (-3,-4) grid (3,4);
+\draw[->,color=black] (-3,0) -- (3,0);
+\foreach \x in {-3,-2,-1,1,2}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-4) -- (0,4);
+\foreach \y in {-4,-3,-2,-1,1,2,3}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-3,-4) rectangle (3,4);
+\draw[smooth,samples=100,domain=-3.0:3.0] plot(\x,{((\x)/1.5)^3});
+\end{tikzpicture}
+
+$\displaystyle h(x) = \left(\frac{x}{1.5}\right)^3$
+\end{center}
+
+\subsection{Tableaux}
+Voici un petit tableau pour commencer
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+1 & 2 \\
+\hline
+3 & 4 \\
+\hline
+\end{tabular}
+\end{center}
+Et un plus gros (pour après) :
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Multiplié par & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+\hline
+1 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+\hline
+2 & 2 & 4 & 6 & 8 & 10 & 12 & 14 & 16 & 18 & 20 \\
+\hline
+3 & 3 & 6 & 9 & 12 & 15 & 18 & 21 & 24 & 27 & 30 \\
+\hline
+4 & 4 & 8 & 12 & 16 & 20 & 24 & 28 & 32 & 36 & 40 \\
+\hline
+5 & 5 & 10 & 15 & 20 & 25 & 30 & 35 & 40 & 45 & 50 \\
+\hline
+6 & 6 & 12 & 18 & 24 & 30 & 36 & 42 & 48 & 54 & 60 \\
+\hline
+7 & 7 & 14 & 21 & 28 & 35 & 42 & 49 & 56 & 63 & 70 \\
+\hline
+8 & 8 & 16 & 24 & 32 & 40 & 48 & 56 & 64 & 72 & 80 \\
+\hline
+9 & 9 & 18 & 27 & 36 & 45 & 54 & 63 & 72 & 81 & 90 \\
+\hline
+10 & 10 & 20 & 30 & 40 & 50 & 60 & 70 & 80 & 90 & 100 \\
+\hline
+\end{tabular}
+
+\end{center}
+
+
+\section{Remeciements pour le cours \LaTeX}
+\'A moi, Quentin CHAUVIN
+\end{document}
